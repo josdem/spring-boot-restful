@@ -6,4 +6,6 @@ interface PersonService {
   List<Person> getPersons()
   Person getPerson(String uuid)
   Person create(Person person)
+  Person update(Person person)
+  Person delete(String uuid)
 }

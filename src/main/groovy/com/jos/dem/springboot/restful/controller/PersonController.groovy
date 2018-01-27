@@ -3,6 +3,7 @@ package com.jos.dem.springboot.restful.controller
 import static org.springframework.web.bind.annotation.RequestMethod.GET
 import static org.springframework.web.bind.annotation.RequestMethod.POST
 import static org.springframework.web.bind.annotation.RequestMethod.PUT
+import static org.springframework.web.bind.annotation.RequestMethod.DELETE
 
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.bind.annotation.RequestMapping
@@ -51,6 +52,20 @@ class PersonController {
   Person createPerson(@RequestBody Person person){
     log.info "Creating new person: ${person.nickname}"
     personService.create(person)
+  }
+
+  @RequestMapping(method=PUT, consumes='application/json')
+  @ResponseBody
+  Person updatePerson(@RequestBody Person person){
+    log.info "Updating person: ${person.nickname}"
+    personService.update(person)
+  }
+
+  @RequestMapping(value='/{uuid}', method=DELETE)
+  @ResponseBody
+  Person deletePerson(@PathVariable String uuid){
+    log.info "Deleting person with uuid: ${uuid}"
+    personService.delete(uuid)
   }
 
   @ResponseStatus(value=HttpStatus.UNAUTHORIZED)

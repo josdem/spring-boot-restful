@@ -24,4 +24,13 @@ class PersonServiceImpl implements PersonService {
     person
   }
 
+  Person update(Person person){
+    person
+  }
+
+  Person delete(String uuid){
+    person
+  }
+
+
 }
