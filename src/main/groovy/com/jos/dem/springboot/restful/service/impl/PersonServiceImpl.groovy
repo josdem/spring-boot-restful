@@ -8,8 +8,20 @@ import com.jos.dem.springboot.restful.model.Person
 @Service
 class PersonServiceImpl implements PersonService {
 
+  private Person person = new Person(nickname:'josdem', email:'joseluis.delacruz@gmail.com')
+
   List<Person> getPersons(){
-    throw new RuntimeException('This is a runtime exception')
+    List<Person> persons = []
+    persons << person
+    persons
+  }
+
+  Person getPerson(String uuid){
+    person
+  }
+
+  Person create(Person person){
+    person
   }
 
 }
