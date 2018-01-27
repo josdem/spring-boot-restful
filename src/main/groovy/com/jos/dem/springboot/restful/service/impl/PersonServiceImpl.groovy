@@ -9,10 +9,7 @@ import com.jos.dem.springboot.restful.model.Person
 class PersonServiceImpl implements PersonService {
 
   List<Person> getPersons(){
-    Person person = new Person(nickname:'josdem', email:'joseluis.delacruz@gmail.com')
-    List<Person> persons = []
-    persons << person
-    persons
+    throw new RuntimeException('This is a runtime exception')
   }
 
 }
